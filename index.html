@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معهد أحمد الحلبي لتعليم الحلاقة</title>
+    <link rel="stylesheet" href="AH.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<body>
+
+    <header>
+        <div class="logo">أحمد الحلبي</div>
+        <nav>
+    <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#courses">الدورات</a></li>
+        <li><a href="#gallery">المعرض</a></li>
+        <li><a href="#registration">التسجيل</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>احترف فن الحلاقة في معهد <span class="gold-text">أحمد الحلبي</span></h1>
+            <p>بوابتك للتميز في عالم الحلاقة الرجالية بأحدث الأساليب العالمية.</p>
+            <div class="buttons">
+                <a href="#" class="btn-gold">سجل الآن</a>
+                <a href="#" class="btn-outline">اكتشف الدورات</a>
+            </div>
+        </div>
+        
+    </section>
+    <section id="registration" class="registration-section">
+    <div class="form-container">
+        <h2>نموذج <span class="gold-text">تسجيل الطلاب</span></h2>
+        <p>يرجى ملء البيانات التالية بدقة للانضمام إلى الدورة</p>
+        <section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">إبداعات <span class="gold-text">معهدنا</span></h2>
+        <p class="section-subtitle">شاهد المستوى الاحترافي لطلابنا ومدربينا</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=500" alt="قصة شعر كلاسيكية">
+                <div class="overlay"><span>قصات كلاسيكية</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=500" alt="تحديد اللحية">
+                <div class="overlay"><span>تحديد اللحية</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593702295094-ada74bc4a39d?q=80&w=500" alt="تسريحات حديثة">
+                <div class="overlay"><span>ستايل عصري</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512690196236-d5a232933334?q=80&w=500" alt="أدوات الحلاقة">
+                <div class="overlay"><span>أدوات احترافية</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="courses" class="courses-section">
+    <h2 class="section-title">دورات <span class="gold-text">المعهد</span></h2>
+    <div class="courses-container">
+        <div class="course-card">
+            <div class="price-tag">500,000 ل.س</div>
+            <h3>دورة الحلاقة الشاملة</h3>
+            <p>من الصفر حتى الاحتراف، تشمل القص والحلاقة وتصفيف الشعر.</p>
+            <ul>
+                <li>⭐ شهادة معتمدة</li>
+                <li>⭐ أدوات حلاقة مجانية</li>
+            </ul>
+        </div>
+        <div class="course-card gold-border">
+            <div class="price-tag">700,000 ل.س</div>
+            <h3>دورة الـ VIP الحديثة</h3>
+            <p>تعلم أحدث صيحات الموضة العالمية وتقنيات الصبغ والبروتين.</p>
+            <ul>
+                <li>⭐ تدريب عملي مكثف</li>
+                <li>⭐ دعم بعد التخرج</li>
+            </ul>
+        </div>
+    </div>
+</section>
+        
+        <form id="enrollmentForm">
+            <div class="input-group">
+                <label>الاسم الكامل</label>
+                <input type="text" placeholder="أدخل اسمك الثلاثي" required>
+            </div>
+
+            <div class="input-group">
+                <label>رقم الهاتف (واتساب)</label>
+                <input type="tel" placeholder="09xx xxx xxx" required>
+            </div>
+
+            <div class="input-group">
+                <label>نوع الدورة</label>
+                <select required>
+                    <option value="" disabled selected>اختر الدورة المطلوبة</option>
+                    <option value="basic">دورة الحلاقة الأساسية</option>
+                    <option value="advanced">دورة قصات الشعر الحديثة (VIP)</option>
+                    <option value="skin">دورة العناية بالبشرة واللحية</option>
+                </select>
+            </div>
+
+            <div class="payment-method">
+                <label>طريقة الدفع المتوفرة:</label>
+                <div class="sham-cash-box">
+                    <img src="https://via.placeholder.com/40x40?text=SC" alt="Sham Cash">
+                    <span>شام كاش (Sham Cash)</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">تأكيد التسجيل والانتقال للدفع</button>
+        </form>
+    </div>
+</section>
+<section id="contact" class="contact-section">
+    <div class="contact-box">
+        <h2>تواصل <span class="gold-text">مباشر</span></h2>
+        <p>موقعنا: دمشق - الميدان - شارع المعهد</p>
+        <p>هاتف: <span class="gold-text">0912345678</span></p>
+        <div class="social-links">
+            <a href="#" class="btn-outline">واتساب</a>
+            <a href="#" class="btn-outline">فيسبوك</a>
+        </div>
+    </div>
+</section>
+<div id="idCardModal" class="modal">
+    <div class="modal-content card-digital">
+        <span class="close-btn">&times;</span>
+        <div class="card-header">
+            <h3>بطاقة تسجيل طالب</h3>
+            <p>معهد أحمد الحلبي</p>
+        </div>
+        <div class="card-body">
+            <div id="qrcode"></div> <div class="student-info">
+                <p>اسم الطالب: <span id="displayStudentName" class="gold-text"></span></p>
+                <p>الدورة: <span id="displayCourseName"></span></p>
+                <p class="status">الحالة: <span style="color: #ffcc00;">بانتظار الدفع (شام كاش)</span></p>
+            </div>
+        </div>
+        <button onclick="window.print()" class="btn-gold" style="width: 100%; margin-top: 15px;">تحميل البطاقة (PDF)</button>
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">أحمد الحلبي</div>
+        <p>جميع الحقوق محفوظة © 2026 - معهد التميز للحلاقة الرجالية</p>
+        <div class="designer-credit">
+            تصميم وتطوير بمودة بواسطة <span class="gold-text">شريكك الذكي</span>
+        </div>
+    </div>
+</footer>
+<a href="https://wa.me/963912345678" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>تواصل معنا</span>
+</a>
+<script src="AH.js"></script>
+    
+
+</body>
+</html>

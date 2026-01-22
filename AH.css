@@ -1,0 +1,584 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a; /* أسود فاخر */
+    color: #ffffff;
+}
+
+/* تنسيق الهيدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #121212;
+    border-bottom: 2px solid #d4af37; /* خط ذهبي */
+}
+
+.logo {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: #d4af37; /* لون ذهبي */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+/* قسم الهيرو (الواجهة) */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080'); /* يمكنك استبدال الرابط بصورة حلاقة */
+    background-size: cover;
+    background-position: center;
+}
+
+.gold-text {
+    color: #d4af37;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* الأزرار */
+.btn-gold {
+    background-color: #d4af37;
+    color: #000;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+
+.btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 28px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+/* تنسيق قسم التسجيل */
+.registration-section {
+    padding: 80px 10%;
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: #121212;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #d4af37; /* إطار ذهبي نحيف */
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* تنسيق الحقول */
+.input-group {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: #d4af37;
+}
+
+/* خيار الدفع */
+.payment-method {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.sham-cash-box {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed #d4af37;
+    margin-top: 10px;
+}
+
+.sham-cash-box img {
+    margin-left: 10px;
+}
+
+/* زر الإرسال */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #b8962e;
+    transform: translateY(-2px);
+}
+/* تنسيق قسم المعرض */
+.gallery-section {
+    padding: 80px 10%;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ليكون متوافق مع الجوال */
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+    transition: 0.4s;
+}
+
+.gallery-item:hover {
+    border-color: #d4af37; /* يتحول الإطار للذهبي عند التمرير */
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(40%); /* لمسة فنية خفيفة */
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%);
+}
+
+/* تأثير الغطاء عند التمرير (Overlay) */
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.gallery-item:hover .overlay {
+    bottom: 0;
+}
+
+.overlay span {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid #d4af37;
+    padding: 10px 20px;
+}
+/* تنسيق قسم الدورات */
+.courses-section {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #0d0d0d;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.course-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    position: relative;
+    border-top: 4px solid #333;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    border-top-color: #d4af37;
+}
+
+.gold-border {
+    border: 1px solid #d4af37;
+}
+
+.price-tag {
+    background: #d4af37;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.course-card ul {
+    list-style: none;
+    text-align: right;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+/* تنسيق قسم الاتصال */
+.contact-section {
+    padding: 80px 10%;
+    background-color: #050505;
+    text-align: center;
+}
+
+.contact-box {
+    border: 1px solid #333;
+    padding: 40px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+/* جعل الانتقال بين الأقسام ناعماً */
+html {
+    scroll-behavior: smooth;
+}
+/* تنسيق قسم الدورات */
+.courses-section {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #0d0d0d;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.course-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    position: relative;
+    border-top: 4px solid #333;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    border-top-color: #d4af37;
+}
+
+.gold-border {
+    border: 1px solid #d4af37;
+}
+
+.price-tag {
+    background: #d4af37;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.course-card ul {
+    list-style: none;
+    text-align: right;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+/* تنسيق قسم الاتصال */
+.contact-section {
+    padding: 80px 10%;
+    background-color: #050505;
+    text-align: center;
+}
+
+.contact-box {
+    border: 1px solid #333;
+    padding: 40px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+/* جعل الانتقال بين الأقسام ناعماً */
+html {
+    scroll-behavior: smooth;
+}
+/* تنسيق النافذة المنبثقة */
+.modal {
+    display: none; position: fixed; z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    background: #1a1a1a; margin: 10% auto; padding: 20px;
+    border: 2px solid #d4af37; width: 350px; border-radius: 15px;
+    text-align: center; color: white; position: relative;
+}
+
+.card-digital {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.card-header { border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+
+#qrcode {
+    background: white; padding: 10px; display: inline-block;
+    border-radius: 10px; margin-bottom: 15px;
+}
+
+.student-info { text-align: right; line-height: 1.8; }
+
+.close-btn {
+    position: absolute; left: 15px; top: 10px;
+    font-size: 25px; color: #d4af37; cursor: pointer;
+}
+/* تأثير ظهور الأقسام */
+.courses-section, .gallery-section, .registration-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show-on-scroll {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+footer {
+    background-color: #050505;
+    padding: 50px 10%;
+    text-align: center;
+    border-top: 1px solid #d4af37;
+    margin-top: 50px;
+}
+
+.footer-logo {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.designer-credit {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #444;
+}
+.btn-gold:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    letter-spacing: 1px;
+}
+/* تنسيقات خاصة للهواتف (شاشات أقل من 768px) */
+@media (max-width: 768px) {
+    /* تصغير حجم الهيدر */
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    /* تصغير النصوص في الواجهة الرئيسية */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* جعل الكروت تظهر تحت بعضها */
+    .courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* ضبط نموذج التسجيل */
+    .form-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    /* ضبط بطاقة الطالب الرقمية لتناسب عرض الشاشة */
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* صورة واحدة في كل سطر */
+    }
+}
+/* تنسيق زر واتساب العائم */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* جعلناه على اليسار لكي لا يغطي نصوص هامة */
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-float img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+}
+
+/* إخفاء النص في الشاشات الصغيرة جداً وترك الأيقونة فقط */
+@media (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 15px;
+        border-radius: 50%;
+    }
+    .whatsapp-float img {
+        margin-right: 0;
+    }
+}
