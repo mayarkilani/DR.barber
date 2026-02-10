@@ -78,3 +78,10 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('تم تسجيل التطبيق بنجاح!'))
+      .catch(err => console.log('فشل تسجيل التطبيق', err));
+  });
+}
