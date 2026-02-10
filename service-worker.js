@@ -1,10 +1,10 @@
 const cacheName = 'ah-academy-v1';
 const assets = [
-  '/',
-  '/index.html',
-  '/AH.css',
-  '/AH.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'
+  "./",
+  "./index.html",
+  "./AH.css",
+  "./AH.js",
+  "./logo.jpg"
 ];
 
 // تثبيت التطبيق وتخزين الملفات
