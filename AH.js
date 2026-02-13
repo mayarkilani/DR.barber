@@ -7,7 +7,7 @@ document.getElementById('enrollmentForm').addEventListener('submit', function(ev
     const phone = document.querySelector('input[type="tel"]').value;
     const course = document.querySelector('select').value;
 
-    // فحص بسيط لرقم الهاتف (تأكد أنه يبدأ بـ 09 ومكون من 10 أرقام)
+    // فحص رقم الهاتف السوري
     const phoneRegex = /^09\d{8}$/;
 
     if (!phoneRegex.test(phone)) {
@@ -15,60 +15,56 @@ document.getElementById('enrollmentForm').addEventListener('submit', function(ev
         return;
     }
 
-    // محاكاة عملية إرسال البيانات (هنا سيتم الربط مع API شام كاش لاحقاً)
+    // محاكاة عملية إرسال البيانات
     console.log("تم استلام البيانات:", { fullName, phone, course });
 
-    // تغيير شكل الزر لإظهار جاري المعالجة
-    const submitBtn = document.querySelector('.btn-submit');
-    submitBtn.innerText = "جاري التحقق من البيانات...";
-    submitBtn.style.opacity = "0.7";
-    submitBtn.disabled = true;
+    // تغيير شكل الزر
+    const submitBtn = document.querySelector('.btn-gold'); // تأكد من الكلاس الصحيح للزر
+    if(submitBtn) {
+        submitBtn.innerText = "جاري التحقق من البيانات...";
+        submitBtn.style.opacity = "0.7";
+        submitBtn.disabled = true;
+    }
 
-    // بعد ثانيتين، نظهر رسالة النجاح
+    // بعد ثانيتين، نظهر البطاقة
     setTimeout(() => {
-        alert(`أهلاً بك يا ${fullName}! تم تسجيل طلبك بنجاح. سنقوم الآن بتحويلك إلى بوابة شام كاش لإتمام عملية الدفع.`);
+        const courseSelect = document.getElementById('courseSelect');
+        const courseText = courseSelect.options[courseSelect.selectedIndex].text;
+
+        // مسح الـ QR القديم إن وجد
+        document.getElementById("qrcode").innerHTML = "";
+
+        // توليد QR Code
+        new QRCode(document.getElementById("qrcode"), {
+            text: `Student: ${fullName}, Phone: ${phone}`,
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff"
+        });
+
+        // وضع البيانات في البطاقة
+        document.getElementById('displayStudentName').innerText = fullName;
+        document.getElementById('displayCourseName').innerText = courseText;
+
+        // إظهار البطاقة
+        document.getElementById('idCardModal').style.display = "block";
         
-        // هنا نضع رابط الدفع الفعلي (رابط تجريبي حالياً)
-        // window.location.href = "https://sham-cash-payment-gateway.com"; 
-        
-        // لإعادة تفعيل الزر إذا لزم الأمر
-        submitBtn.innerText = "تأكيد التسجيل والانتقال للدفع";
-        submitBtn.style.opacity = "1";
-        submitBtn.disabled = false;
+        // إعادة الزر لحالته
+        if(submitBtn) {
+            submitBtn.innerText = "إرسال الطلب وإصدار البطاقة";
+            submitBtn.style.opacity = "1";
+            submitBtn.disabled = false;
+        }
     }, 2000);
 });
-document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const fullName = document.querySelector('input[type="text"]').value;
-    const phone = document.querySelector('input[type="tel"]').value;
-    const courseSelect = document.querySelector('select');
-    const courseText = courseSelect.options[courseSelect.selectedIndex].text;
-
-    // مسح الـ QR القديم إن وجد
-    document.getElementById("qrcode").innerHTML = "";
-
-    // توليد QR Code يحتوي على اسم الطالب ورقمه
-    new QRCode(document.getElementById("qrcode"), {
-        text: `Student: ${fullName}, Phone: ${phone}`,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff"
-    });
-
-    // وضع البيانات في البطاقة
-    document.getElementById('displayStudentName').innerText = fullName;
-    document.getElementById('displayCourseName').innerText = courseText;
-
-    // إظهار البطاقة
-    document.getElementById('idCardModal').style.display = "block";
-});
-
-// إغلاق النافذة عند الضغط على X
+// إغلاق النافذة (Modal)
 document.querySelector('.close-btn').onclick = function() {
     document.getElementById('idCardModal').style.display = "none";
 }
+
+// تأثيرات الظهور عند التمرير
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.courses-section, .gallery-section, .registration-section');
     sections.forEach(sec => {
@@ -78,10 +74,12 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// --- الكود السحري لتفعيل أيقونة التثبيت (PWA) ---
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('تم تسجيل التطبيق بنجاح!'))
-      .catch(err => console.log('فشل تسجيل التطبيق', err));
-  });
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.log('Service Worker Registered!', reg))
+        .catch(err => console.log('Service Worker Error', err));
+    });
 }
