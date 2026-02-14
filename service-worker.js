@@ -1,4 +1,6 @@
-const cacheName = 'ah-academy-v1';
+
+const cacheName = 'ah-academy-v2';
+
 const assets = [
   "./",
   "./index.html",
